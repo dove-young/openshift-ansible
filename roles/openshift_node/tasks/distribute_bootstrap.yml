@@ -11,7 +11,7 @@
   register: bootstrap_credentials
   delegate_to: "{{ groups.oo_first_master.0 }}"
   run_once: true
-  no_log: true
+  no_log: false
 
 - name: Distribute bootstrap kubeconfig if one does not exist
   copy:
@@ -21,7 +21,7 @@
     owner: root
     group: root
     force: no
-  no_log: true
+  no_log: false
 
 - name: Start and enable node for bootstrapping
   systemd:

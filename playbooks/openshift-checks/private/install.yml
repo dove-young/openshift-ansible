@@ -27,11 +27,11 @@
     args:
       checks:
       - disk_availability
-      - memory_availability
+#      - memory_availability
       - package_availability
       - package_version
       - docker_image_availability
-      - docker_storage
+#      - docker_storage
 
   - name: Run health checks (install) - Fedora
     when: ansible_distribution == "Fedora"

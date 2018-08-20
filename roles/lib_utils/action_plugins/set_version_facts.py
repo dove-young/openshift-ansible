@@ -34,6 +34,8 @@ def set_version_facts_if_unset(version):
     else:
         examples_content_version = 'v3.10'
 
+    examples_content_version = 'v3.11'
+
     facts['openshift_examples_content_version'] = examples_content_version
 
     return facts

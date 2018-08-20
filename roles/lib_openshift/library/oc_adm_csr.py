@@ -881,8 +881,8 @@ class OpenShiftCLI(object):
     ''' Class to wrap the command line tools '''
     def __init__(self,
                  namespace,
-                 kubeconfig='/etc/origin/master/admin.kubeconfig',
-                 verbose=False,
+                 kubeconfig='/etc/origin/master/openshift-master.kubeconfig',
+                 verbose=True,
                  all_namespaces=False):
         ''' Constructor for OpenshiftCLI '''
         self.namespace = namespace
@@ -1123,6 +1123,7 @@ class OpenShiftCLI(object):
 
         if oadm:
             cmds.append('adm')
+            cmds.append('--config=/etc/origin/master/openshift-master.kubeconfig')
 
         cmds.extend(cmd)
 

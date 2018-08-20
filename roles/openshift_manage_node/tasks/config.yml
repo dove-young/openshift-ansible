@@ -1,4 +1,9 @@
 ---
+
+- name: openshift.node.nodename
+  debug:
+    var: openshift.node.nodename
+
 - name: Set node schedulability
   oc_adm_manage_node:
     node: "{{ openshift.node.nodename | lower }}"

@@ -1144,6 +1144,7 @@ class OpenShiftCLI(object):
 
         if oadm:
             cmds.append('adm')
+            cmds.append('--config=/etc/origin/master/openshift-master.kubeconfig')
 
         cmds.extend(cmd)
 

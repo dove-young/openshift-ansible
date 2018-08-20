@@ -253,6 +253,10 @@
     fail:
       msg: Control plane pods didn't come up
 
+- name: openshift.node.nodename
+  debug:
+    var: openshift.node.nodename
+
 - name: Wait for all control plane pods to become ready
   oc_obj:
     state: list

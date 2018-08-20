@@ -40,8 +40,10 @@
   - name: Approve bootstrap nodes
     oc_adm_csr:
       nodes: "{{ l_nodes_to_join }}"
-      timeout: 60
-      fail_on_timeout: true
+      timeout: 1200
+#      fail_on_timeout: true
+#      debug: true
+#      approve_all: true
     register: approve_out
     ignore_errors: true
     when:

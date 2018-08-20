@@ -486,9 +486,11 @@ def set_nodename(facts):
         #     facts['node']['nodename'] = facts['provider']['metadata']['hostname'].replace('.novalocal', '')
         else:
             if 'bootstrapped' in facts['node'] and facts['node']['bootstrapped']:
-                facts['node']['nodename'] = facts['common']['raw_hostname'].lower()
+                facts['node']['nodename'] = facts['common']['raw_hostname'].split('.')[0].lower()
             else:
-                facts['node']['nodename'] = facts['common']['hostname'].lower()
+                facts['node']['nodename'] = facts['common']['hostname'].split('.')[0].lower()
+
+#    facts['node']['nodename'] = facts['common']['raw_hostname'].split('.')[0]
     return facts
 
 
